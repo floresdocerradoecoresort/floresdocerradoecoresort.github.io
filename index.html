@@ -174,7 +174,8 @@ a{color:inherit;text-decoration:none}
 .flink em{position:absolute;right:5mm;top:50%;transform:translateY(-50%);font-style:normal;font-size:7.5pt;font-weight:700;color:#6ee7b7;letter-spacing:.04em}
 .flink div{font-size:12.5pt;padding-right:20mm}
 .maplink{display:inline-block;margin-top:1.2mm;font-size:7.5pt;font-weight:700;letter-spacing:.06em;color:#5eead4;border:1px solid rgba(94,234,212,.5);border-radius:99px;padding:.4mm 2.4mm}
-.compact .ph-card{min-height:23mm}
+.compact .pimg,.banner,.duo div,.th,.mapbox img,.cover .photo{filter:saturate(1.45) contrast(1.08) brightness(1.04)}
+.ph-card{min-height:23mm}
 .compact .ph-card .pimg{width:34mm}
 .compact .place{margin-bottom:2mm}
 .compact .ph-card .pt{padding:2mm 3mm}
@@ -733,7 +734,7 @@ a{color:inherit;text-decoration:none}
         lbl:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'],tileSize:256,maxzoom:18},
         dem:{type:'raster-dem',tiles:['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],tileSize:256,encoding:'terrarium',maxzoom:14}
       },
-      layers:[{id:'sat',type:'raster',source:'sat'},{id:'lbl',type:'raster',source:'lbl'}],
+      layers:[{id:'sat',type:'raster',source:'sat',paint:{'raster-saturation':0.45,'raster-contrast':0.18,'raster-brightness-min':0.04}},{id:'lbl',type:'raster',source:'lbl'}],
       terrain:{source:'dem',exaggeration:1.35}},
       center:[D.centro.lon,D.centro.lat],zoom:9.3,pitch:0,bearing:0,maxPitch:85,attributionControl:{compact:true}});
     map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'bottom-right');
