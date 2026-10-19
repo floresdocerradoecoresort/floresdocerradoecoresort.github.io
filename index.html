@@ -391,6 +391,22 @@ body{background:#fff;color:var(--ink)}
 .dia .dd{grid-area:dd}.dia .tp{grid-area:tp}.dia .cl{grid-area:cl;min-width:0}
 .dia .lu{grid-area:lu;flex-direction:row;gap:2mm;font-size:10pt;text-align:right;justify-content:flex-end}
 .dia .cl{font-size:12pt}.dia .dd b{font-size:14pt}.dia .dd small{font-size:10.5pt}
+/* menu inicial: 4 ícones por linha (última linha centralizada) */
+.grid{display:flex;flex-wrap:wrap;justify-content:center;align-content:space-evenly;gap:5mm 0}
+.grid .tile{width:25%;flex:none;gap:2mm}
+.grid .tile .tile-ico{width:21mm;height:21mm;border-radius:6mm}
+.tile-lb{font-size:10pt;line-height:1.16;max-width:none;overflow-wrap:anywhere;padding:0 .6mm}
+
+/* celular: a página ocupa a tela inteira, sem moldura */
+@media screen and (max-width:640px){
+  html,body{width:100%}
+  body{padding:0!important;display:block}
+  .page{width:100%!important;max-width:none;border-radius:0!important;box-shadow:none!important;min-height:100vh;min-height:100dvh;padding:7mm 4.2mm 30mm}
+  .ph{margin-bottom:5mm}
+  .grid .tile .tile-ico{width:19mm;height:19mm;border-radius:5.4mm}
+  .tile-lb{font-size:9.6pt}
+  .grid{gap:4.4mm 0}
+}
 </style></head><body>
 <section class="page home" id="home">
   <div class="glow" style="background:radial-gradient(circle,#10b98155,transparent 65%)"></div>
@@ -1028,8 +1044,7 @@ body{background:#fff;color:var(--ink)}
     var a=pages[cur];if(!a)return;
     a.style.removeProperty('height');a.style.removeProperty('width');a.style.transform='none';a.style.marginBottom='0';
     var vw=document.documentElement.clientWidth||window.innerWidth;
-    /* celular: a página ocupa a largura da tela (o conteúdo reorganiza) e rola na vertical — as letras mantêm o tamanho de leitura */
-    if(vw<640)a.style.setProperty('width',(vw-14)+'px','important');
+    /* celular: a página ocupa a tela toda (CSS) e rola na vertical — as letras mantêm o tamanho de leitura */
   }
   function show(i,keepHash){
     cur=Math.max(0,Math.min(pages.length-1,i));
