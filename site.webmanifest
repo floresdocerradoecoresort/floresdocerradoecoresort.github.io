@@ -3,8 +3,8 @@
  "short_name": "Flores do Cerrado",
  "start_url": "./",
  "display": "standalone",
- "background_color": "#020617",
- "theme_color": "#020617",
+ "background_color": "#101012",
+ "theme_color": "#101012",
  "icons": [
   {
    "src": "icon-192.png",
