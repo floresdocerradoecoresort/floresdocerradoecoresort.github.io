@@ -568,13 +568,22 @@ html[data-tema="areia"] .page>.tbtn{color:#3a2f12;background:rgba(255,250,236,.8
 .topt b{justify-content:center;text-align:center}
 .tclose{display:block;width:100%;margin-top:14px;font:800 17px 'DM Sans',sans-serif;color:#052e16;background:#4ade80;border:0;border-radius:99px;padding:13px;cursor:pointer}
 @media (max-width:420px){.tbox{padding:16px 12px 14px}.topts{gap:9px}.topt{padding:5px}.topt b{font-size:14.5px}}
-/* computador/notebook: tela inteira também; conteúdo centralizado em coluna legível */
+/* computador/notebook: tela inteira; conteúdo em colunas para caber mais por tela (menos rolagem) */
 @media screen and (min-width:641px){
   .page,.page.home{padding-left:max(6mm,calc((100% - 820px)/2));padding-right:max(6mm,calc((100% - 820px)/2))}
   .home .grid .tile .tile-ico{width:clamp(52px,calc((100dvh - 355px)/3 - 26px),24mm);height:clamp(52px,calc((100dvh - 355px)/3 - 26px),24mm)}
   .home .logo-home{height:clamp(80px,22dvh,60mm)}
   .gnav{padding:12px 20px 18px;gap:12px}
   html[data-tema] .page>.tbtn{top:6mm;right:8mm}
+}
+@media screen and (min-width:760px){
+  .page:not(.home){padding-left:max(6mm,calc((100% - 1000px)/2));padding-right:max(6mm,calc((100% - 1000px)/2));padding-bottom:34mm}
+  .page:not(.home) .gbody{display:block;column-count:2;column-gap:20px}
+  .page:not(.home) .gbody>*{break-inside:avoid;margin-bottom:12px}
+}
+@media screen and (min-width:1100px){
+  .page:not(.home){padding-left:max(6mm,calc((100% - 1480px)/2));padding-right:max(6mm,calc((100% - 1480px)/2))}
+  .page:not(.home) .gbody{column-count:3;column-gap:22px}
 }
 @media print{.tbtn,#tsheet{display:none!important}}
 </style></head><body>
